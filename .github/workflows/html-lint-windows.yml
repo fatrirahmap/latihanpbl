@@ -3,7 +3,7 @@ name: Cek Kode HTML
 on:
   push:
     branches:
-    -main
+      - main
     pull_request:
 
 jobs:
@@ -11,11 +11,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    -name: Checkout Repository
-    uses: action/checkout@v4
+    - name: Checkout Repository
+      uses: action/checkout@v47
 
-    -name: Install HTMLint
-    run: npm install -g HTMLint
+    - name: Install HTMLint
+      run: npm install -g HTMLint
 
-    -name: Periksa HTML
-    run: htmlint "**/*.html"
+    - name: Periksa HTML
+      run: htmlint "**/*.html"
